@@ -35,7 +35,7 @@ Extract and add to your PATH, then make executable on Unix systems.
 
 ### Option 2: Homebrew (Linux)
 ```bash
-brew install goaikit/aikit/aikit
+brew install goaikit/cli/aikit
 ```
 
 ### Option 3: Scoop (Windows)
@@ -72,6 +72,19 @@ aikit search "code analysis"
 aikit install myorg/useful-tools
 ```
 
+### Local Installation
+Install packages directly from local directories for development:
+
+```bash
+# Install from current directory (must contain aikit.toml)
+aikit install .
+
+# Install from specific directory path
+aikit install /path/to/package
+```
+
+**ZIP Files:** Automatic extraction when installing from GitHub. Local ZIP installation not supported.
+
 ### Project Templates
 ```bash
 # Interactive project setup
@@ -107,6 +120,53 @@ Shows which AI assistants and development tools are installed.
 aikit check
 ```
 
+### `aikit install` - Install Packages
+Install AIKIT packages from GitHub or local directories.
+
+```bash
+aikit install user/package-name          # Install from GitHub
+aikit install .                         # Install from current directory
+aikit install . --ai claude              # Install with specific AI agent
+```
+
+Options: `--version <ver>`, `--token <token>`, `--force`, `--yes`, `--ai <agent>`
+
+### `aikit list` - List Installed Packages
+Show all installed AIKIT packages.
+
+```bash
+aikit list
+aikit list --author username             # Filter by author
+aikit list --detailed                    # Show detailed information
+```
+
+### `aikit update` - Update Packages
+Update installed packages to their latest versions.
+
+```bash
+aikit update package-name
+aikit update package-name --breaking     # Allow breaking changes
+```
+
+### `aikit remove` - Remove Packages
+Uninstall AIKIT packages.
+
+```bash
+aikit remove package-name
+aikit remove package-name --force        # Skip confirmation
+```
+
+### `aikit search` - Search Packages
+Discover packages in the AIKIT ecosystem.
+
+```bash
+aikit search "testing"
+aikit search "code review" --detailed    # Show detailed results
+aikit search "analysis" --limit 10       # Limit results to 10
+```
+
+Options: `--limit <num>`, `--detailed`, `--registry <url>`
+
 ### `aikit version` - Check Version
 Displays current AIKIT version and checks for updates.
 
@@ -140,7 +200,7 @@ aikit version
 ```bash
 aikit package init code-review-tools --description "AI-powered code review tools"
 cd code-review-tools
-# Edit package.toml and add templates
+# Edit aikit.toml and add templates
 aikit package build
 aikit package publish yourusername/code-review-tools
 ```
