@@ -116,11 +116,11 @@ aikit list
 
 ## Supported AI assistants
 
-The catalog lists **18** assistants for install/template mapping.
+The catalog lists **19** assistants for install/template mapping.
 Runnable via `aikit agent run`: `codex`, `claude`, `gemini`, `opencode`,
-`agent`, `aikit`, `auto`.
+`cursor`, `pi`, `aikit`, `auto`.
 
-**CLI-based:** Claude, Gemini, Qwen, OpenCode, Codex, Auggie, CodeBuddy,
+**CLI-based:** Claude, Gemini, Qwen, OpenCode, Codex, Pi, Auggie, CodeBuddy,
 Qoder, Q, Amp, Shai
 
 **IDE-based:** GitHub Copilot, Cursor, Windsurf, KiloCode, Roo, Bob
